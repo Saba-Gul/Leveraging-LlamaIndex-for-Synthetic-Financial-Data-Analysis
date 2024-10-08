@@ -1,0 +1,2 @@
+# Leveraging-LlamaIndex-for-Synthetic-Financial-Data-Analysis
+This repository contains code for generating synthetic questions based on the content of financial reports, specifically 10-K filings. By utilizing the LlamaIndex library and OpenAI's language model, this project aims to automate the process of extracting meaningful insights from financial documents without the need for manual analysis.
