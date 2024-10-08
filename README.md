@@ -6,7 +6,7 @@ This repository contains code for generating synthetic questions based on the co
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Code Explanation](#code-explanation)
+- [How It Works](#how-it-works)
 - [Importance for Financial Analysts](#importance-for-financial-analysts)
 
 ## Overview
@@ -36,26 +36,26 @@ Make sure you have a valid OpenAI API key and set it in your environment.
 
 To run the code, simply execute the script in a Python environment that supports Jupyter notebooks or Google Colab.
 
-## Code Explanation
+## How It Works
 
-The main components of the code are as follows:
+The code consists of several key steps:
 
-1. **Importing Libraries**: The necessary libraries, including `llama-index`, `OpenAI`, and `tqdm`, are imported.
+1. **PDF Data Extraction**: The script downloads the specified 10-K financial report and extracts its text content using the LlamaIndex library.
 
-2. **PDF Data Extraction**: The script downloads the 10-K report and extracts its content into a structured format.
+2. **Data Chunking**: The extracted content is processed into smaller sections (nodes) to facilitate question generation.
 
-3. **Chunking the Data**: The document is divided into smaller nodes for easier processing.
+3. **Synthetic Question Generation**: Using OpenAI's GPT model, the script generates a defined number of questions for each node. These questions encompass key financial concepts, metrics, and specific numerical data from the report.
 
-4. **Generating Questions**: 
-   - A prompt template is created to guide the LLM in generating questions.
-   - The LLM is called to produce a specified number of questions for each chunk of the document.
-   - The generated questions are cleaned and stored alongside their context.
+4. **Output Storage**: The generated questions are stored in a dictionary, with each question linked to its corresponding context.
 
 ## Importance for Financial Analysts
 
-This tool is designed to assist financial analysts by:
+Generating synthetic questions can be a game-changer for financial analysts in the following ways:
 
-- **Automating Insights**: Quickly generates relevant questions to guide analysis, reducing manual effort.
-- **Enhancing Understanding**: Helps identify key metrics and concepts within financial reports, leading to deeper insights.
-- **Improving Efficiency**: Saves time in document review and analysis, allowing analysts to focus on interpreting results rather than extracting data.
+- **Efficiency**: Saves time in document review and analysis, allowing analysts to focus on interpreting results rather than extracting data.
+
+- **Scalability**: This approach enables the creation of large sets of questions across multiple reports, facilitating comprehensive analyses across different financial documents.
+
+- **Insight Generation**: By asking diverse questions about the report's content, analysts can uncover insights and trends that might not be immediately apparent from the raw data.
+
 
